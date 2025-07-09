@@ -102,9 +102,6 @@ def date_range(starting_date,ending_date,df):
 
     expense_visualizer.create_summary(filtered_df)
     list_of_transactions.create_list(data_frame= filtered_df, key="category_editor_debit_date")
-    # save_button_debit = st.button("Apply Changes", type="primary", key="debit_save_1")
-    # new_category = st.text_input("New Category Name", key="debit_cat")
-    # add_button = st.button("Add Category", key="debit_button")
 
     def submit():
         # col1, col2, col3 = st.columns([20, 45, 7], vertical_alignment="bottom")
@@ -179,8 +176,6 @@ def main():
                         save_button_debit = st.button("Apply Changes", type="primary", key="debit_save")
 
                 if not save_date_button_debit:
-                    # new_category = st.text_input("New Category Name", key="debit_cat")
-                    # add_button = st.button("Add Category", key="debit_button")
 
                     if "my_text" not in st.session_state:
                         st.session_state.my_text = ""
@@ -257,8 +252,6 @@ def main():
                         save_button_credit = st.button("Apply Changes", type="primary", key="credit_save")
 
                 if not save_date_button_credit:
-                    # new_category = st.text_input("New Category Name", key="credit_cat")
-                    # add_button = st.button("Add Category", key="credit_button")
 
                     if "my_text" not in st.session_state:
                         st.session_state.my_text = ""
@@ -310,7 +303,8 @@ def main():
 
 
             with (tab3):
-
+    # WEEKLY / MONTHLY BAR GRAPHS
+                
                 global MONTHLY_OR_WEEKLY
                 weekly_amount = []
                 monthly_amount = []
