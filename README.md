@@ -1,2 +1,2 @@
 # Credit-Card-Statement-Dashboard
-Credit card statement dashboard for Chase (pdf or csv) and Amex (csv) credit card statements.
+Credit card statement dashboard for Chase (pdf or csv) and Amex (csv) credit card statements. This dashboard was coded in Python and uses streamlit to visualize Debits, Credits and Monthly or Weekly Spending. The dashboard has a date search function, a reset button and a categories list that will auto update if the dashboard has seen the same merchant before. The dashboard was made to intake csv data however it currently works with a PDF Chase Statement and ideally will work with other PDF Statements soon.
