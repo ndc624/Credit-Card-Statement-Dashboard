@@ -17,7 +17,7 @@ st.set_page_config(page_title="Simple Finance App", page_icon="$",layout = "wide
 
 category_file = "categories.json"
 
-# Things we want to persist after each reload need to be stored in this state
+# PERSISTING ITEMS
 if "categories" not in st.session_state:
     st.session_state.categories = {
         "Uncategorized": []
@@ -68,10 +68,6 @@ def load_transactions(file):
 
         currency = ["USD" for number in df["Amount"]]
 
-        # for date in df["Date"]:
-        #
-        #     df["Date"] = date.date()
-
         df["Currency"] = currency
         df["Debit/Credit"] = debit_credit
 
@@ -104,10 +100,6 @@ def date_range(starting_date,ending_date,df):
     list_of_transactions.create_list(data_frame= filtered_df, key="category_editor_debit_date")
 
     def submit():
-        # col1, col2, col3 = st.columns([20, 45, 7], vertical_alignment="bottom")
-        # with col3:
-        #     st.button("Apply Changes", type="primary", key="debit_save")
-
         st.session_state.my_text = st.text_input("New Category Name", key="debit_cat", on_change=submit, width=2000)
         st.session_state.widget = ""
     col1, col2, col3 = st.columns([20, 45, 7], vertical_alignment="bottom")
@@ -118,12 +110,6 @@ def date_range(starting_date,ending_date,df):
         st.session_state.widget = ""
     edited_expense_visualizer = expense_visualizer.create_table(filtered_df)
     expense_visualizer.create_chart(filtered_df)
-
-
-# def submit():
-#     st.session_state.my_text = st.session_state.widget
-#     st.session_state.widget = ""
-
 
 
 def main():
@@ -301,9 +287,8 @@ def main():
 
 
 
-
+# WEEKLY / MONTHLY BAR GRAPHS
             with (tab3):
-    # WEEKLY / MONTHLY BAR GRAPHS
                 
                 global MONTHLY_OR_WEEKLY
                 weekly_amount = []
